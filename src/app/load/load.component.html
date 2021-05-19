@@ -1,0 +1,7 @@
+
+<main class="container">
+    <app-search (handleFilter)="handleFilter($event)"></app-search>
+    <app-body [isFiltered]="isFiltered" (handleTotalResults)="handleTotalResults($event)"></app-body> 
+    <app-pagination [totalResults]="totalResults" ></app-pagination>    
+</main> 
+  

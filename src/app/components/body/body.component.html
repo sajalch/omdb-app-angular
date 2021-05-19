@@ -1,0 +1,26 @@
+
+<h1 *ngIf="(haveMoreData) then ifBlock else elseBlock"></h1>
+
+<ng-template #ifBlock>
+  <div class="center">
+    <p class="center"><b>You are currently in Page: {{currentPage}}</b></p>
+    <p ><b>{{isFiltered?'Filtered':''}} Search Results :</b></p>
+      <div *ngFor="let item of data" class="card">        
+          <div class="container">
+          <img 
+              [src]="item.poster"
+              (error)="onImgNotFoundError($event)"
+              alt="Avatar"            
+              style="margin:auto;width:100%;height: 15rem;"
+          />
+          <h4><b>{{item.title}}</b></h4> 
+          <p>Releasing Year: {{item.year}}</p>
+          <p>IMDB ID: {{item.imdbId}}</p> 
+          </div>
+      </div>
+  </div>
+</ng-template>
+<ng-template #elseBlock>
+  <p *ngIf="currentPage;then thisOne else otherOne" #thisOne class="center container"><b>No {{isFiltered?'Filtered':''}} Results Found!!!</b></p>  
+  <p #otherOne class="center container"><b>Search Something...</b></p>  
+</ng-template> 

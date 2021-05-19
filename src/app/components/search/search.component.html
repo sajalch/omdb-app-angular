@@ -1,0 +1,17 @@
+
+<!-- <div class="search" style="margin:auto;max-width:300px">
+  <input type="text" placeholder="Search.." #search>
+  <button (click)="null"><i class="fa fa-search"></i></button>  
+</div> -->
+
+<!-- <input type="text" (click)="handleSearch(box.value)" placeholder="Enter a Movie Name..." #search>
+  <button (click)="null"><i class="fa fa-search"></i></button>  
+<input class="search" type="number" min="1895" [max]="currentYear" placeholder="Enter a year" #filter>
+<button class="search" (click)="handleYearFilter(box.value, year.value)">filter</button> -->
+
+<div class="search" style="margin: auto;max-width:30rem">
+<input type="text" [value]="searchVal" placeholder="Enter a Movie Name..." #search (change)="handleOnSearch(search.value)">
+<button [routerLink]="searchQuery" ><i class="fa fa-search"></i></button>    
+<input  [checked]="isFilter" (change)="handleOnFilter($event.target.checked)" type="checkbox">
+    <b>&nbsp;Filter (2010 to Newer)</b>
+</div>
