@@ -10,8 +10,8 @@
 <button class="search" (click)="handleYearFilter(box.value, year.value)">filter</button> -->
 
 <div class="search" style="margin: auto;max-width:30rem">
-<input type="text" [value]="searchVal" placeholder="Enter a Movie Name..." #search (change)="handleOnSearch(search.value)">
-<button [routerLink]="searchQuery" ><i class="fa fa-search"></i></button>    
+<input type="text" [value]="searchVal" placeholder="Enter a Movie Name..." #search  (keydown)="handleOnSearch($event,search.value)">
+<button [routerLink]="searchQuery"><i class="fa fa-search"></i></button>    
 <input  [checked]="isFilter" (change)="handleOnFilter($event.target.checked)" type="checkbox">
     <b>&nbsp;Filter (2010 to Newer)</b>
 </div>
